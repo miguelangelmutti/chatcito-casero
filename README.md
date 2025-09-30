@@ -9,6 +9,7 @@ Una aplicación de chat simple y elegante construida con Flask y Flask-SocketIO.
 - Notificaciones de conexión/desconexión
 - Mensajes con timestamp
 - Nombres de usuario personalizables
+- Compatible con Python 3.13
 
 ## 🚀 Instalación
 
@@ -64,7 +65,7 @@ chatcito-casero/
 - **Flask**: Framework web
 - **Flask-SocketIO**: WebSockets para comunicación en tiempo real
 - **Socket.IO**: Biblioteca JavaScript para WebSockets
-- **Eventlet**: Servidor WSGI asíncrono
+- **Gevent**: Servidor WSGI asíncrono (compatible con Python 3.13)
 
 ## 📝 Uso
 
@@ -79,6 +80,12 @@ chatcito-casero/
 Puedes modificar la configuración en `app.py`:
 - `SECRET_KEY`: Cambia la clave secreta por una más segura
 - `host` y `port`: Modifica la dirección y puerto del servidor
+- `async_mode`: Usa 'gevent' para mejor compatibilidad con Python 3.13
+
+## ⚙️ Requisitos
+
+- Python 3.8 o superior (probado con Python 3.13)
+- Se recomienda usar un entorno virtual
 
 ## 📄 Licencia
 
