@@ -3,7 +3,7 @@ from flask_socketio import SocketIO, emit
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'tu-clave-secreta-aqui'
-socketio = SocketIO(app, cors_allowed_origins="*")
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode='gevent')
 
 @app.route('/')
 def index():
@@ -23,4 +23,6 @@ def handle_message(data):
     emit('message', data, broadcast=True)
 
 if __name__ == '__main__':
+    print('🚀 Servidor iniciado en http://localhost:5000')
+    print('💡 Usando gevent como servidor asíncrono')
     socketio.run(app, debug=True, host='0.0.0.0', port=5000)
