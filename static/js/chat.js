@@ -11,6 +11,14 @@ socket.on('connect', () => {
     console.log('Conectado al servidor');
 });
 
+// Recibir historial de mensajes al conectar
+socket.on('history', (messages) => {
+    console.log(`📥 Historial recibido: ${messages.length} mensajes`);
+    messages.forEach(message => {
+        displayMessage(message);
+    });
+});
+
 // Recibir mensajes
 socket.on('message', (data) => {
     displayMessage(data);
